@@ -1,0 +1,67 @@
+
+:root:has(#thread-context, #channel-context, #guild-context, #guild-browse-channels-context-menu, #audio-device-context, #user-settings-cog, #account),
+:root:has([class^="privateChannels_"]):has(#user-context),
+:root:has(:is([class^="sidebar_"], [class*="guilds_"]):is(:hover, :focus-within)) {
+    --visiblechannellist-width: 240px;
+}
+
+.sidebar_a4d4d9 {
+    width: var(--visiblechannellist-width, 0);
+    transition: width .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sidebar_a4d4d9 .container_ee69e0 {
+    width: 240px;
+}
+
+
+/* hide clown decors */
+img[class*="avatar"][src^="https://cdn.discordapp.com/avatar-decoration-presets/a_5e1210779d99ece1c0b4f438a5bc6e72.png"] {
+    display: none;
+}
+
+/* hide dm channel */
+li[class^=channel] > div[class^=interactive] > a[class^=link][href="/channels/@me/939396225407524904"]:not([aria-label^="unread"]) {
+    display: none;
+}
+
+/* hide messages that don't metion you in a channel */
+/*[data-list-id="chat-messages"]  li[id^="chat-messages-905069615393157150"]:not(:has(div.mentioned_fa6fd2)) {
+    display: none;
+}*/
+
+/* hide reactions in a channel */
+[data-list-id="chat-messages"]  li[id^="chat-messages-905069615393157150"] [id^="message-accessories"] {
+    display: none;
+}
+
+/* hides super reactions */
+[class^=reaction_]:has(div > [class^="burstGlow"]) {
+    display: none;
+}
+
+/* high contrast names */
+[class*=username_][style], .mention[style], [class*=membersGroup_] [style] {
+    filter: contrast(.2) brightness(1.2) saturate(500%);
+}
+
+/*[class^="containerDefault"]:has(+ [class^="voiceChannelsButton_"]:not([])) {
+    display: none;
+}*/
+[data-list-item-id^="NO_LIST___expression-guild"]:has([class^="categoryItemLockIconContainer__"]) {
+    display: none;
+}
+
+
+/* hide nitro and shop buttons */
+li.channel_c91bad:has([href="/shop"]) {
+    display: none;
+}
+
+li.channel_c91bad:has([href="/store"]) {
+    display: none;
+}
+
+/* stop mirroring your camera */
+.media-engine-video[class*=mirror_] { transform: none }
+

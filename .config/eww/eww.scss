@@ -1,0 +1,106 @@
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+  margin: 0px;
+  padding: 0px;
+}
+
+//Global Styles
+.bar, .calendar, .applicationTooltip {
+  background-color: #3a3a3a;
+  color: #b0b4bc;
+}
+
+.sidestuff slider {
+  color: #ffd5cd;
+}
+
+.metric scale trough highlight {
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.metric scale trough highlight {
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.label-ram {
+  font-size: large;
+}
+
+.applications {
+  margin-left: 15px;
+}
+
+.powerbutton {
+  margin-right: 15px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 16px;
+  margin-bottom: -4px;
+
+  &:hover {
+    background-color: #e86056;
+    color: #000000;
+  }
+}
+
+.applications .app {
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-top: 0px;
+
+  transition: background-color 0.2s, border-color 0.2s;
+
+  background-color: #545454;
+  border-bottom: 3px solid #737373;
+
+  &:hover {
+    background-color: #7cc4e6;
+    border-bottom: 3px solid #45b3e6;
+  }
+}
+
+.clock {
+}
+
+.clock_text {
+  font-size: 12px;
+  padding-bottom: 8px;
+  min-width: 100px;
+}
+
+.clock_text2 {
+  font-size: 10px;
+  min-width: 100px;
+}
+
+.calendar {
+  padding: 10px;
+  min-width: 250px;
+}
+
+.leftTooltip {
+  margin: 10px;
+  min-width: 250px;
+}
+
+.leftTooltip .leftTooltip-title {
+
+}

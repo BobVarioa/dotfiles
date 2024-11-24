@@ -1,0 +1,6 @@
+#! /usr/bin/zsh
+
+DESKTOPFILE=$(find "/usr/share/applications/" "${HOME}/.local/share/applications/" -iname "*$1*")
+if [ $DESKTOPFILE ]; then
+    cat $DESKTOPFILE | jq -rRn '[inputs] | .[1:index("")] | [.[] | split("=") | {(.[0]): .[1]}] | reduce .[] as $item ({}; . + $item)'
+fi

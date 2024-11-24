@@ -1,0 +1,14 @@
+# Import default rules from the system Compose file:
+include "%L"
+
+<Multi_key> <colon> <parenright> : "😄"
+<Multi_key> <O> <colon> <parenright> : "😇"
+
+# ipa
+<Multi_key> <m> <g> : "ɱ"
+
+# util
+# <Multi_key> <|> <P> : "¶"
+<Multi_key> <equal> <minus> : "≡"
+<Multi_key> <minus> <equal> : "≡"
+

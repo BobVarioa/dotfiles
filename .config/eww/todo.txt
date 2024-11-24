@@ -1,0 +1,10 @@
+- [x] applications
+
+volume
+bluetooth
+wifi
+battery
+notifs
+
+clight
+steam
