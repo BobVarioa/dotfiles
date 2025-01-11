@@ -1,3 +1,0 @@
-#! /usr/bin/zsh
-
-wmctrl -lx | jq -cRn '[inputs | split("\\s+"; null) | { wid: .[0], name: .[2] | split(".")[0], title: .[3:] | join(" ")}]'
