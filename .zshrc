@@ -9,9 +9,10 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:~/.local/bin:/usr/local/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH=/usr/share/oh-my-zsh/
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+powerline-daemon -q
+. /usr/share/powerline/bindings/zsh/powerline.zsh
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -22,6 +23,11 @@ ENABLE_CORRECTION="true"
 SPROMPT="zsh: correct '%R' to '%r' [Ny]?"
 
 plugins=(git kate github gradle node npm debian aliases zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting)
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,10 +41,6 @@ export EDITOR=micro
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/aliases.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bun completions
 [ -s "/home/bob/.bun/_bun" ] && source "/home/bob/.bun/_bun"
@@ -101,3 +103,4 @@ PERL_LOCAL_LIB_ROOT="/home/bob/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROO
 PERL_MB_OPT="--install_base \"/home/bob/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/bob/perl5"; export PERL_MM_OPT;
 
+source /usr/share/nvm/init-nvm.sh
