@@ -267,14 +267,6 @@
             "badges": true,
             "messages": false
         },
-        "PronounDB": {
-            "enabled": true,
-            "showInMessages": true,
-            "showSelf": true,
-            "pronounSource": 0,
-            "pronounsFormat": "LOWERCASE",
-            "showInProfile": true
-        },
         "QuickMention": {
             "enabled": false
         },
@@ -305,9 +297,6 @@
             "enabled": false
         },
         "RoleColorEverywhere": {
-            "enabled": false
-        },
-        "SearchReply": {
             "enabled": false
         },
         "SendTimestamps": {
@@ -637,9 +626,6 @@
             "enabled": true,
             "showAtSymbol": true
         },
-        "ShowAllRoles": {
-            "enabled": false
-        },
         "YoutubeAdblock": {
             "enabled": false
         },
@@ -655,6 +641,35 @@
         "WebContextMenus": {
             "enabled": true,
             "addBack": true
+        },
+        "AlwaysExpandRoles": {
+            "enabled": false
+        },
+        "FullSearchContext": {
+            "enabled": false
+        },
+        "UserMessagesPronouns": {
+            "enabled": true,
+            "showInMessages": true,
+            "showSelf": true,
+            "pronounSource": 0,
+            "pronounsFormat": "LOWERCASE",
+            "showInProfile": true
+        },
+        "DynamicImageModalAPI": {
+            "enabled": true
+        },
+        "AccountPanelServerProfile": {
+            "enabled": false
+        },
+        "CopyFileContents": {
+            "enabled": false
+        },
+        "NoMaskedUrlPaste": {
+            "enabled": false
+        },
+        "StickerPaste": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -667,7 +682,7 @@
         "authenticated": true,
         "url": "https://api.vencord.dev/",
         "settingsSync": true,
-        "settingsSyncVersion": 1723579666662
+        "settingsSyncVersion": 1733099656145
     },
     "enabledThemes": []
 }
