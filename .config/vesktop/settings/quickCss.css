@@ -1,15 +1,12 @@
-
 :root:has(#thread-context, #channel-context, #guild-context, #guild-browse-channels-context-menu, #audio-device-context, #user-settings-cog, #account),
-:root:has([class^="privateChannels_"]):has(#user-context),
-:root:has(:is([class^="sidebar_"], [class*="guilds_"]):is(:hover, :focus-within)) {
+:root:has([class^="privateChannels"]):has(#user-context),
+:root:has(:is(.sidebar_a4d4d9, .guilds_a4d4d9):is(:hover, :focus-within)) {
     --visiblechannellist-width: 240px;
 }
-
-.sidebar_a4d4d9 {
-    width: var(--visiblechannellist-width, 0);
+:not([i]):not([i]):not([i]) .sidebar_a4d4d9 {
+    width: var(--visiblechannellist-width, 0) !important;
     transition: width .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 .sidebar_a4d4d9 .container_ee69e0 {
     width: 240px;
 }
