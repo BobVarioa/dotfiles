@@ -1,14 +1,4 @@
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
- * =========================================================================== */
 
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
 
 @keyframes blink-warning {
     70% {
@@ -32,11 +22,6 @@
     }
 }
 
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
-
 /* Reset all styles */
 * {
     border: none;
@@ -45,12 +30,6 @@
     margin: 0;
     padding: 0;
 }
-
-/*tooltip {a
-}
-tooltip label {
-    margin: 100px;
-}*/
 
 /* The whole bar */
 #waybar {
@@ -75,12 +54,7 @@ tooltip label {
     padding-left: 10px;
     padding-right: 10px;
 }
-
-
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
-
+/* a */
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -172,20 +146,13 @@ tooltip label {
 }
 
 #taskbar button {
-/*     border-bottom: 2px solid transparent; */
-    /* To compensate for the top border and still have vertical centering */
-/*     padding-top: 2px; */
     padding-left: 10px;
     padding-right: 10px;
     color: #a07cb4;
-
 }
 
 #taskbar button.active {
     color: white;
-/*     border-color: #c99ee1; */
     background-color: #a07cb4;
-
-/*     transition: border-color 0.3s ease-in-out; */
     transition: background-color 0.3s ease-in;
 }

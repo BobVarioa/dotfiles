@@ -19,7 +19,6 @@
         "memory",
         "cpu",
         "battery"
-        // "temperature",
     ],
 
     // Modules
@@ -28,7 +27,7 @@
         "icon-size": 21,
         "tooltip-format": "{title}",
         "on-click": "activate",
-        "on-click-middle": "close",
+        "on-click-middle": "close"
     },
 
     "battery": {
@@ -38,15 +37,15 @@
             "critical": 15
         },
         // Connected to AC
-        "format": "  {icon}   {capacity}%", // Icon: bolt
+        "format": "󰂅  {capacity}%", // Icon: bolt
         // Not connected to AC
         "format-discharging": "{icon}   {capacity}%",
         "format-icons": [
-            "", // Icon: battery-full
-            "", // Icon: battery-three-quarters
-            "", // Icon: battery-half
-            "", // Icon: battery-quarter
-            ""  // Icon: battery-empty
+            "󰁹", // Icon: battery-full
+            "󰂀", // Icon: battery-three-quarters
+            "󰁾", // Icon: battery-half
+            "󰁼", // Icon: battery-quarter
+            "󰁺"  // Icon: battery-empty
         ],
         "tooltip": false,
         "tooltip-format": ""
@@ -84,7 +83,7 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "{icon} {essid}", // Icon: wifi
+        "format-wifi": "{icon}  {essid}", // Icon: wifi
         "format-disconnected": "⚠  Disconnected",
         "format-icons": [
           " "
@@ -105,38 +104,6 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "blueman-manager",
         "on-click-middle": "~/.config/waybar/bluetooth_toggle.sh"
-    },
-
-    //"pulseaudio": {
-    //    //"scroll-step": 1,
-    //    "format": "{icon}  {volume}%",
-    //    "format-bluetooth": "{icon}  {volume}%",
-    //    "format-muted": "",
-    //    "format-icons": {
-    //        "headphones": "",
-    //        "handsfree": "",
-    //        "headset": "",
-    //        "phone": "",
-    //        "portable": "",
-    //        "car": "",
-    //        "default": ["", ""]
-    //    },
-    //    "on-click": "pavucontrol"
-    //},
-
-    "temperature": {
-        "critical-threshold": 80,
-        "interval": 5,
-        "format": "{icon}  {temperatureC}°C",
-        "format-icons": [
-            "", // Icon: temperature-empty
-            "", // Icon: temperature-quarter
-            "", // Icon: temperature-half
-            "", // Icon: temperature-three-quarters
-            ""  // Icon: temperature-full
-        ],
-        "tooltip": false,
-        "tooltip-format": ""
     },
 
     "tray": {
