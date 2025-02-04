@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Sleep
+Icon=system-suspend
+Terminal=false
+Type=Application
+Exec=systemctl sleep
