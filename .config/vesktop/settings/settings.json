@@ -408,7 +408,7 @@
             "enabled": false
         },
         "VolumeBooster": {
-            "enabled": false
+            "enabled": true
         },
         "GreetStickerPicker": {
             "enabled": false
@@ -685,7 +685,7 @@
         "authenticated": true,
         "url": "https://api.vencord.dev/",
         "settingsSync": true,
-        "settingsSyncVersion": 1736615885222
+        "settingsSyncVersion": 1736902827463
     },
     "enabledThemes": []
 }
