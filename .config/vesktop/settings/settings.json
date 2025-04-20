@@ -148,9 +148,6 @@
         "GifPaste": {
             "enabled": false
         },
-        "HideAttachments": {
-            "enabled": false
-        },
         "iLoveSpam": {
             "enabled": false
         },
@@ -673,6 +670,12 @@
         },
         "StickerPaste": {
             "enabled": false
+        },
+        "HideMedia": {
+            "enabled": false
+        },
+        "IrcColors": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -685,7 +688,7 @@
         "authenticated": true,
         "url": "https://api.vencord.dev/",
         "settingsSync": true,
-        "settingsSyncVersion": 1736902827463
+        "settingsSyncVersion": 1738712320569
     },
     "enabledThemes": []
 }

@@ -1,25 +1,86 @@
-:root:has(#thread-context, #channel-context, #guild-context, #guild-browse-channels-context-menu, #audio-device-context, #user-settings-cog, #account),
+:root:has(
+    #thread-context,
+    #channel-context,
+    #guild-context,
+    #guild-browse-channels-context-menu,
+    #audio-device-context,
+    #user-settings-cog,
+    #account
+  ),
 :root:has([class^="privateChannels"]):has(#user-context),
-:root:has(:is([class^="sidebar_"], [data-list-id="guildsnav"]):is(:hover, :focus-within)) {
-    --visiblechannellist-width: 240px;
+:root:has(
+    :is([class^="sidebar_"], [data-list-id="guildsnav"]):is(
+        :hover,
+        :focus-within
+      )
+  ) {
+  --visiblechannellist-width: 240px;
+  --visiblechannellist-display-type: flex;
 }
-:not([i]):not([i]):not([i]) [class^="sidebar_"] {
-    width: var(--visiblechannellist-width, 0) !important;
-    transition: width .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+:not([i]):not([i]):not([i]) [class^="sidebarList_"] {
+  width: var(--visiblechannellist-width, 0) !important;
+  transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-[class^="sidebar_"] [class^="container__"] {
-    width: 240px;
+[class^="sidebarList_"] {
+  width: 240px;
 }
 
+.container_e131a9 {
+  display: var(--visiblechannellist-display-type, none) !important;
+}
+
+/* make top bar disappear */
+.visual-refresh {
+  div[class^="base_"] {
+    grid-template-rows: auto;
+
+    & > div[class^="bar_"] {
+      display: none;
+    }
+  }
+
+  ul[data-list-id="guildsnav"] > div[class^="itemsContainer_"] {
+    margin-top: 16px;
+  }
+}
+
+/* fix member list after visual refresh*/
+[class^="membersWrap_"] {
+  min-width: unset;
+  > [class^="members_"] {
+    width: 225px;
+    [class^="membersGroup_"] {
+      padding: 24px 0px 0 16px;
+      height: 40px;
+    }
+    [class^="member_"] > div > [class^="memberInner_"] {
+      padding: 5px;
+    }
+  }
+}
+/* fix scaling stuff */
+[class^="page_"] {
+  width: 100%;
+}
+
+/* hide nitro button */
+button[aria-label="Send a gift"] {
+  display: none;
+}
 
 /* hide clown decors */
-img[class*="avatar"][src^="https://cdn.discordapp.com/avatar-decoration-presets/a_5e1210779d99ece1c0b4f438a5bc6e72.png"] {
-    display: none;
+img[class*="avatar"][src^="https://cdn.discordapp.com/avatar-decoration-presets/a_5e1210779d99ece1c0b4f438a5bc6e72.png"]
+{
+  display: none;
 }
 
 /* hide dm channel */
-li[class^=channel] > div[class^=interactive] > a[class^=link][href="/channels/@me/939396225407524904"]:not([aria-label^="unread"]) {
-    display: none;
+li[class^="channel"]
+  > div[class^="interactive"]
+  > a[class^="link"][href="/channels/@me/939396225407524904"]:not(
+    [aria-label^="unread"]
+  ) {
+  display: none;
 }
 
 /* hide messages that don't metion you in a channel */
@@ -28,37 +89,43 @@ li[class^=channel] > div[class^=interactive] > a[class^=link][href="/channels/@m
 }*/
 
 /* hide reactions in a channel */
-[data-list-id="chat-messages"]  li[id^="chat-messages-905069615393157150"] [id^="message-accessories"] {
-    display: none;
+[data-list-id="chat-messages"]
+  li[id^="chat-messages-905069615393157150"]
+  [id^="message-accessories"] {
+  display: none;
 }
 
 /* hides super reactions */
-[class^=reaction_]:has(div > [class^="burstGlow"]) {
-    display: none;
+[class^="reaction_"]:has(div > [class^="burstGlow"]) {
+  display: none;
 }
 
 /* high contrast names */
-[class*=username_][style], .mention[style], [class*=membersGroup_] [style] {
-    filter: contrast(.2) brightness(1.2) saturate(500%);
+[class*="username_"][style],
+.mention[style],
+[class*="membersGroup_"] [style] {
+  filter: contrast(0.2) brightness(1.2) saturate(500%);
 }
 
 /*[class^="containerDefault"]:has(+ [class^="voiceChannelsButton_"]:not([])) {
     display: none;
 }*/
-[data-list-item-id^="NO_LIST___expression-guild"]:has([class^="categoryItemLockIconContainer__"]) {
-    display: none;
+[data-list-item-id^="NO_LIST___expression-guild"]:has(
+    [class^="categoryItemLockIconContainer__"]
+  ) {
+  display: none;
 }
-
 
 /* hide nitro and shop buttons */
 li.channel_c91bad:has([href="/shop"]) {
-    display: none;
+  display: none;
 }
 
 li.channel_c91bad:has([href="/store"]) {
-    display: none;
+  display: none;
 }
 
 /* stop mirroring your camera */
-.media-engine-video[class*=mirror_] { transform: none }
-
+.media-engine-video[class*="mirror_"] {
+  transform: none;
+}
