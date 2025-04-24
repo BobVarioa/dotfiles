@@ -1,0 +1,12 @@
+entry {
+  border-color: rgb(160, 124, 180);
+}
+
+
+window {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+list > *:selected {
+    background-color: rgb(160, 124, 180);
+}
