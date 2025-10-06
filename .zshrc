@@ -6,10 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:~/.local/bin:/usr/local/go/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:~/.local/bin:/usr/local/go/bin:/home/bob/.local/share/gem/ruby/3.4.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh/
+export ZSH_CUSTOM=/usr/share/zsh/
 
 powerline-daemon -q
 . /usr/share/powerline/bindings/zsh/powerline.zsh
@@ -95,7 +96,7 @@ _fzf_comprun() {
 
 
 export RUSTC_WRAPPER=sccache
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
+export JAVA_HOME=/usr/lib/jvm/java-24-openjdk/
 
 PATH="/home/bob/perl5/bin:/home/bob/.local/bin:$PATH"; export PATH;
 PERL5LIB="/home/bob/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
