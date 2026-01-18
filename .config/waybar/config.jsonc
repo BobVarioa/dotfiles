@@ -90,7 +90,7 @@
        	],
         "tooltip": false,
         "tooltip-format": "",
-        "on-click": "iwgtk"
+        "on-click": "nm-connection-editor"
     },
 
     "bluetooth": {
