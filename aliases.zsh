@@ -54,6 +54,13 @@ ytdlu() {
 	ytdl -j $1 | jq 'include "ytdlu"; main'
 }
 
+ytdlm() {
+	ytdl $1 -f bestaudio --remux-video opus -x --embed-thumbnail --convert-thumbnails jpg --ppa "ffmpeg: -c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" --add-metadata
+}
+
+vocalremove() {
+	docker run -it -p 7860:7860 --platform=linux/amd64 registry.hf.space/r3gm-ultimate-vocal-remover-webui:latest python app.py
+}
 
 findpkg() {
 	where=$(which $1)
