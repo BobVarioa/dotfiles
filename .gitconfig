@@ -10,3 +10,6 @@
 	version = HTTP/2
 [init]
 	defaultBranch = main
+[user]
+	name = Bob Varioa
+	email = bob.varioa@gmail.com
