@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:~/.local/bin:/usr/local/go/bin:/home/bob/.local/share/gem/ruby/3.4.0/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:~/.local/bin:/usr/local/go/bin:/home/bob/.local/share/gem/ruby/3.4.0/bin:/home/bob/.cargo/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh/
