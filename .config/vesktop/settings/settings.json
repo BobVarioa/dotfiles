@@ -112,9 +112,6 @@
             "enabled": true,
             "type": 0
         },
-        "EmoteCloner": {
-            "enabled": false
-        },
         "Experiments": {
             "enabled": true,
             "enableIsStaff": false,
@@ -676,6 +673,9 @@
         },
         "IrcColors": {
             "enabled": false
+        },
+        "ExpressionCloner": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -688,7 +688,8 @@
         "authenticated": true,
         "url": "https://api.vencord.dev/",
         "settingsSync": true,
-        "settingsSyncVersion": 1738712320569
+        "settingsSyncVersion": 1748705076070
     },
-    "enabledThemes": []
+    "enabledThemes": [],
+    "eagerPatches": false
 }
