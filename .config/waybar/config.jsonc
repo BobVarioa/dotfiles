@@ -1,114 +1,162 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 30,
-    "margin-bottom": 0,
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "margin-bottom": 0,
 
-    "modules-left": [
-        "wlr/taskbar"
+  "modules-left": [
+    "custom/power", 
+    "wlr/taskbar"
+    // "hyprland/workspaces"
+  ],
+
+  "modules-center": ["clock#date", "clock#time"],
+  "modules-right": [
+    "tray",
+    "network",
+    "bluetooth",
+    "memory",
+    "cpu",
+    "battery",
+    "custom/notifs",
+  ],
+
+  // Modules
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 21,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+  },
+  // "hyprland/workspaces": {
+  //   "format": "{windows}",
+  //   "window-rewrite-default": "",
+  //   "format-window-separator": " ",
+  //   "workspace-taskbar": {
+  //       "enable": true,
+  //       "update-active-window": true,
+  //       "format": "{icon} {title:.22}",
+  //       "icon-size": 18,
+        // "on-click-window": "${SCRIPTS}/focus-window.sh {address} {button}"
+    // },
+    // "window-rewrite": {
+    //   "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+    //   "class<firefox>": "", // Windows whose classes are "firefox"
+    //   "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+    //   "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+    //   "code": "󰨞",
+    // },
+  // },
+
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    // Connected to AC
+    "format": "󱐋 {icon}  {capacity}%", // Icon: bolt
+    // Not connected to AC
+    "format-discharging": "{icon}   {capacity}%",
+    "format-icons": [
+      "󰁺", // Icon: battery-empty
+      "󰁼", // Icon: battery-quarter
+      "󰁾", // Icon: battery-half
+      "󰂀", // Icon: battery-three-quarters
+      "󰁹" // Icon: battery-full
     ],
+    "tooltip": false,
+    "tooltip-format": "",
+  },
 
-    "modules-center": [
-        "clock#date",
-        "clock#time"
-    ],
-    "modules-right": [
-        "tray",
-        "network",
-        "bluetooth",
-        "memory",
-        "cpu",
-        "battery"
-    ],
+  "clock#time": {
+    "interval": 1,
+    "format": "{:%H:%M:%S}",
+    "tooltip": false,
+  },
 
-    // Modules
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 21,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close"
+  "clock#date": {
+    "interval": 10,
+    "format": "  {:%e %b %Y}", // Icon: calendar-alt
+    "tooltip-format": "{:%e %B %Y}",
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "󰍛  {usage}%", // Icon: microchip
+    "states": {
+      "warning": 70,
+      "critical": 90,
     },
+  },
 
-    "battery": {
-        "interval": 10,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        // Connected to AC
-        "format": "󱐋 {icon}  {capacity}%", // Icon: bolt
-        // Not connected to AC
-        "format-discharging": "{icon}   {capacity}%",
-        "format-icons": [
-            "󰁺", // Icon: battery-empty
-            "󰁼", // Icon: battery-quarter
-            "󰁾", // Icon: battery-half
-            "󰂀", // Icon: battery-three-quarters
-            "󰁹"  // Icon: battery-full
-        ],
-        "tooltip": false,
-        "tooltip-format": ""
+  "memory": {
+    "interval": 5,
+    "format": "󰘚  {}%", // Icon: memory
+    "states": {
+      "warning": 70,
+      "critical": 90,
     },
+  },
 
-    "clock#time": {
-        "interval": 1,
-        "format": "{:%H:%M:%S}",
-        "tooltip": false
+  "network": {
+    "interval": 5,
+    "format-wifi": "{icon}  {essid}", // Icon: wifi
+    "format-disconnected": "⚠  Disconnected",
+    "format-icons": [" "],
+    "tooltip": false,
+    "tooltip-format": "",
+    "on-click": "iwgtk",
+  },
+
+  "bluetooth": {
+    "format-off": "",
+    "format-on": "",
+    "format-connected": "  {device_alias}",
+    "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager",
+    "on-click-middle": "~/.config/waybar/bluetooth_toggle.sh",
+  },
+
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+  },
+
+  "custom/notifs": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫 ",
+      "none": " ",
+      "dnd-notification": "󰂠 ",
+      "dnd-none": "󰪓 ",
+      "inhibited-notification": "󰂛 ",
+      "inhibited-none": "󰪑 ",
+      "dnd-inhibited-notification": "󰂛 ",
+      "dnd-inhibited-none": "󰪑 ",
     },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
 
-    "clock#date": {
-      "interval": 10,
-      "format": "  {:%e %b %Y}", // Icon: calendar-alt
-      "tooltip-format": "{:%e %B %Y}"
+  "custom/power": {
+    "format": "󰐥",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "systemctl poweroff",
+      "reboot": "systemctl reboot",
     },
-
-    "cpu": {
-        "interval": 5,
-        "format": "󰘚  {usage}%", // Icon: microchip
-        "states": {
-          "warning": 70,
-          "critical": 90
-        }
-    },
-
-    "memory": {
-        "interval": 5,
-        "format": "󰍛  {}%", // Icon: memory
-        "states": {
-            "warning": 70,
-            "critical": 90
-        }
-    },
-
-    "network": {
-        "interval": 5,
-        "format-wifi": "{icon}  {essid}", // Icon: wifi
-        "format-disconnected": "⚠  Disconnected",
-        "format-icons": [
-          " "
-       	],
-        "tooltip": false,
-        "tooltip-format": "",
-        "on-click": "nm-connection-editor"
-    },
-
-    "bluetooth": {
-        "format-off": "",
-        "format-on": "",
-        "format-connected": "  {device_alias}",
-        "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
-        "tooltip-format": "",
-        "tooltip-format-connected": "{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "blueman-manager",
-        "on-click-middle": "~/.config/waybar/bluetooth_toggle.sh"
-    },
-
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    }
-
+  },
 }
