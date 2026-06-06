@@ -4,7 +4,7 @@ export PATH=$PATH:/home/bob/apps/portable
 alias cl="clear"
 alias noansi="sed -e 's/\x1b\[[0-9;]*m//g'"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias ls="eza --color=always --no-filesize --icons=always --no-time --no-user --no-permissions"
+# alias ls="eza --color=always --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias l="ls --long"
 alias editor="micro"
 
