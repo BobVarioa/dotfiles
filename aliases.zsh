@@ -76,3 +76,7 @@ findpkg() {
 screenoff() {
 	hyprctl dispatch dpms,toggle
 }
+
+fix-vertical() {
+	ffmpeg -display_rotation 0 -i $1 -vf "transpose=1" $2
+}
