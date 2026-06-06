@@ -165,14 +165,14 @@ hl.config({
     },
 
     group = {
-        ["col.border_active"] = "rgba(a07cb4ff)",
-        ["col.border_inactive"] = "rgba(595959aa)",
+        ["col.border_active"] = "#a07cb4ff",
+        ["col.border_inactive"] = "#595959aa",
 
         groupbar = {
             gradients = true,
 
-            ["col.active"] = "rgba(a07cb4ff)",
-            ["col.inactive"] = "rgba(595959aa)",
+            ["col.active"] = "#a07cb4ff",
+            ["col.inactive"] = "#595959aa",
         },
     },
 
@@ -275,7 +275,7 @@ hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grimblast copysave area"))
 hl.bind("SUPER + Print", hl.dsp.exec_cmd("grimblast copysave active"))
 
 -- locking --
-hl.bind("SUPER + L", function ()
+hl.bind("SUPER + L", function()
     hl_lock()
 end)
 
