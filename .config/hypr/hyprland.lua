@@ -215,7 +215,7 @@ hl.animation({ leaf = "specialWorkspace", enabled = false })
 
 ---- controls ----
 -- general --
-hl.bind("SUPER + W", hl.dsp.window.kill())
+hl.bind("SUPER + W", hl.dsp.window.close())
 hl.bind("ALT + space", hl.dsp.exec_cmd("/home/bob/.cargo/bin/anyrun"))
 hl.bind("SUPER + space", hl.dsp.exec_cmd("nwg-drawer"))
 hl.bind("SUPER + F", hl.dsp.window.float())
