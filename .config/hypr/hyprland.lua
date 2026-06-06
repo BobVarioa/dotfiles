@@ -185,8 +185,6 @@ hl.config({
     },
 
     misc = {
-        force_default_wallpaper = 1,
-
         key_press_enables_dpms = true,
         mouse_move_enables_dpms = true,
 
@@ -194,7 +192,12 @@ hl.config({
         session_lock_xray = true,
 
         enable_swallow = true,
-        swallow_regex = "^(kitty)$"
+        swallow_regex = "^(kitty)$",
+
+        -- background tweaks
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        background_color = "#360A62"
     },
 
     quirks = {
