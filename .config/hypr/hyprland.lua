@@ -303,11 +303,16 @@ end)
 -- ignore bluetooth key --
 -- hl.bind("XF86Bluetooth", function() end)
 
--- window movement --
-hl.bind("SUPER + left", hl.dsp.window.move({ direction = "l" }))
-hl.bind("SUPER + right", hl.dsp.window.move({ direction = "r" }))
-hl.bind("SUPER + up", hl.dsp.window.move({ direction = "u" }))
-hl.bind("SUPER + down", hl.dsp.window.move({ direction = "d" }))
+-- move/resize windows --
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + Control_L", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind("SUPER + Alt_L", hl.dsp.window.resize(), { mouse = true })
+
+hl.bind("SUPER + left", hl.dsp.window.move({ direction = "l", group_aware = true }))
+hl.bind("SUPER + right", hl.dsp.window.move({ direction = "r", group_aware = true }))
+hl.bind("SUPER + up", hl.dsp.window.move({ direction = "u", group_aware = true }))
+hl.bind("SUPER + down", hl.dsp.window.move({ direction = "d", group_aware = true }))
 
 -- move a window into a (c)orner --
 --[[
@@ -363,11 +368,6 @@ for i = 1, 9, 1 do
     hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 end
 
--- move/resize windows --
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind("SUPER + Control_L", hl.dsp.window.drag(), { mouse = true })
-hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.bind("SUPER + Alt_L", hl.dsp.window.resize(), { mouse = true })
 
 -- sw(A)llow --
 hl.bind("SUPER + A", hl.dsp.window.toggle_swallow())
