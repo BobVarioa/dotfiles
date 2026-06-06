@@ -96,7 +96,7 @@ _fzf_comprun() {
 
 
 export RUSTC_WRAPPER=sccache
-export JAVA_HOME=/usr/lib/jvm/java-24-openjdk/
+export JAVA_HOME=/usr/lib/jvm/default-runtime/
 
 PATH="/home/bob/perl5/bin:/home/bob/.local/bin:$PATH"; export PATH;
 PERL5LIB="/home/bob/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
