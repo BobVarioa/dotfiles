@@ -1,4 +1,7 @@
-dofile("/home/bob/.config/hypr/monitors.lua")
+local loadMonitors = loadfile("/home/bob/.config/hypr/monitors.lua")
+if loadMonitors ~= nil then
+    loadMonitors()
+end
 
 ---- enviroment vars ----
 -- xdg desktop --
