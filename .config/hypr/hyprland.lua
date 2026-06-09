@@ -35,7 +35,6 @@ end
 
 ---@param m HL.Monitor
 local function open_glpaper(m)
-    close_glpaper(m)
     hl.exec_cmd("glpaper " .. m.name .. " ~/.config/hypr/sky.frag --fps 5 -F")
 end
 
