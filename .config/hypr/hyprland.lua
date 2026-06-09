@@ -69,18 +69,18 @@ hl.on("hyprland.start", function()
     hl_lock()
 
     -- start essential programs --
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("swaync")
     hl.exec_cmd("swayosd-server")
-    hl.exec_cmd("playerctld daemon")
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("systemctl --user start hyprpolkitagent")
-    hl.exec_cmd("ydotoold")
-    hl.exec_cmd("nwg-drawer -r ")
+    hl.exec_cmd("nwg-drawer -r")
     hl.exec_cmd("hypridle")
+    hl.exec_cmd("tailscale-systray")
+    hl.exec_cmd("playerctld daemon")
+    hl.exec_cmd("anyrun daemon")
+
+    -- make sure some things tweaked by boot --
     hl.exec_cmd("bluetoothctl power off")
     hl.exec_cmd("openrgb -p on")
-    hl.exec_cmd("tailscale-systray")
-    hl.exec_cmd("anyrun daemon")
 
     -- wallpaper --
     for _, m in ipairs(hl.get_monitors()) do
