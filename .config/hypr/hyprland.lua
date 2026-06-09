@@ -34,6 +34,12 @@ local function close_glpaper(m)
     hl.exec_cmd("pkill -f \"glpaper " .. m.name .. "\"")
 end
 
+---@param m HL.Monitor
+local function open_glpaper(m)
+    close_glpaper(m)
+    hl.exec_cmd("glpaper " .. m.name .. " ~/.config/hypr/sky.frag --fps 5 -F")
+end
+
 function hl_lock()
     hl.exec_cmd("pkill -9 waybar")
     for _, window in ipairs(hl.get_windows()) do
