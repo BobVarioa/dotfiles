@@ -27,18 +27,7 @@ hl.env("QT_QUICK_CONTROLS_STYLE", "org.kde.desktop")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 
--- keyboard --
-hl.env("XMODIFIERS", "@im=fcitx")
-hl.env("QT_IM_MODULES", "wayland;fcitx;ibus")
-hl.env("SDL_IM_MODULE", "fcitx")
-hl.env("GTK_IM_MODULE", "fcitx")
-
 ---- start all apps ----
-
----@param m HL.Monitor
-local function open_glpaper(m)
-    hl.exec_cmd("glpaper " .. m.name .. " ~/.config/hypr/sky.frag --fps 5 -F")
-end
 
 ---@param m HL.Monitor
 local function close_glpaper(m)
