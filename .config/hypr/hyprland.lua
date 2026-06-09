@@ -291,12 +291,28 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-to
 
 -- brightness --
 hl.bind("XF86MonBrightnessDown", function()
-    hl.exec_cmd("swayosd-client --brightness lower")
-    hl.exec_cmd("ddcutil --bus 1 setvcp 10 - 10 --sleep-multiplier .2")
+    local monitor = hl.get_active_monitor()
+    if monitor ~= nil then
+        if monitor.name == "eDP-1" then
+            hl.exec_cmd("swayosd-client --brightness lower --monitor " .. monitor.name)
+        else
+            hl.exec_cmd(
+            "ddcutil --bus 1 setvcp 10 - 10 --sleep-multiplier .2 && swayosd-client --custom-icon=display-brightness-symbolic --custom-progress=\"$(ddcutil --bus 1 getvcp 10 -t |  awk '{split($0,a,\" \"); print a[4]/a[5]}')\" --monitor " ..
+            monitor.name)
+        end
+    end
 end)
 hl.bind("XF86MonBrightnessUp", function()
-    hl.exec_cmd("swayosd-client --brightness raise")
-    hl.exec_cmd("ddcutil --bus 1 setvcp 10 + 10 --sleep-multiplier .2")
+    local monitor = hl.get_active_monitor()
+    if monitor ~= nil then
+        if monitor.name == "eDP-1" then
+            hl.exec_cmd("swayosd-client --brightness raise --monitor " .. monitor.name)
+        else
+            hl.exec_cmd(
+            "ddcutil --bus 1 setvcp 10 + 10 --sleep-multiplier .2 && swayosd-client --custom-icon=display-brightness-symbolic --custom-progress=\"$(ddcutil --bus 1 getvcp 10 -t |  awk '{split($0,a,\" \"); print a[4]/a[5]}')\" --monitor " ..
+            monitor.name)
+        end
+    end
 end)
 
 -- ignore bluetooth key --
