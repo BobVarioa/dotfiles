@@ -55,7 +55,62 @@ ytdlu() {
 }
 
 ytdlm() {
-	ytdl $1 -f bestaudio --remux-video opus -x --embed-thumbnail --convert-thumbnails jpg --ppa "ffmpeg: -c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" --add-metadata
+	ytdl $1 \
+		-x \
+		-f bestaudio \
+		--recode-video opus \
+		--audio-format opus \
+		--embed-thumbnail \
+		--convert-thumbnails jpg \
+		--ppa "ffmpeg: -c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" \
+		--add-metadata \
+		-o "%(uploader)s/%(album)s/%(title)s - %(uploader)s.%(ext)s"
+}
+
+
+ytdlmf() {
+	ytdl $1 \
+		-x \
+		-f bestaudio \
+		--recode-video opus \
+		--audio-format opus \
+		--embed-thumbnail \
+		--convert-thumbnails jpg \
+		--ppa "ffmpeg: -c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" \
+		--add-metadata \
+		-o "%(title)s - %(uploader)s.%(ext)s"
+}
+
+ytdlsm() {
+	ytdl $1 \
+		-f bestaudio \
+		--remux-video opus \
+		-x --embed-thumbnail \
+		--convert-thumbnails jpg \
+		--ppa "ffmpeg: -c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" \
+		--add-metadata \
+		-o "%(uploader)s/%(album)s/%(title)s - %(uploader)s.%(ext)s" \
+		--cookies ./cookies.txt \
+		-t sleep
+}
+
+ytdlm_chapters() {
+	ytdl $1 \
+		-f bestaudio \
+		--audio-format mp3 \
+		-x \
+		--embed-thumbnail \
+		--convert-thumbnails jpg \
+		--ppa "ffmpeg: -c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" \
+		--split-chapters \
+		-o "chapter:%(title)s - %(artist,uploader)s/%(section_title)s.%(ext)s"
+
+	ytdl $1 \
+		--no-download \
+		--write-thumbnail \
+		--convert-thumbnails jpg \
+		--ppa "ffmpeg: -c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" \
+		-o "thumbnail:%(title)s - %(artist,uploader)s/cover.%(ext)s"
 }
 
 vocalremove() {
