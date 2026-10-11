@@ -101,11 +101,11 @@ li[class^="channel"]
 }
 
 /* high contrast names */
-[class*="username_"][style],
+/* [class*="username_"][style],
 .mention[style],
 [class*="membersGroup_"] [style] {
   filter: contrast(0.2) brightness(1.2) saturate(500%);
-}
+} */
 
 /*[class^="containerDefault"]:has(+ [class^="voiceChannelsButton_"]:not([])) {
     display: none;

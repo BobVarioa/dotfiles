@@ -51,7 +51,8 @@
         },
         "Settings": {
             "enabled": true,
-            "settingsLocation": "aboveActivity"
+            "settingsLocation": "aboveActivity",
+            "includeVencordInfoWhenCopying": true
         },
         "AlwaysAnimate": {
             "enabled": false
@@ -140,7 +141,8 @@
         },
         "GameActivityToggle": {
             "enabled": true,
-            "oldIcon": false
+            "oldIcon": false,
+            "location": "PANEL"
         },
         "GifPaste": {
             "enabled": false
@@ -161,9 +163,6 @@
         "KeepCurrentChannel": {
             "enabled": true
         },
-        "LastFMRichPresence": {
-            "enabled": false
-        },
         "LoadingQuotes": {
             "enabled": false
         },
@@ -177,9 +176,6 @@
             "enabled": false
         },
         "MessageLogger": {
-            "enabled": false
-        },
-        "MessageTags": {
             "enabled": false
         },
         "MoreCommands": {
@@ -201,7 +197,7 @@
             "enabled": false
         },
         "NoDevtoolsWarning": {
-            "enabled": false
+            "enabled": true
         },
         "NoF1": {
             "enabled": false
@@ -238,7 +234,8 @@
             "spotify": true,
             "steam": true,
             "epic": true,
-            "tidal": true
+            "tidal": true,
+            "itunes": true
         },
         "PermissionsViewer": {
             "enabled": true,
@@ -279,7 +276,8 @@
             "groups": true,
             "servers": true,
             "friends": true,
-            "friendRequestCancels": true
+            "friendRequestCancels": true,
+            "notices": false
         },
         "RevealAllSpoilers": {
             "enabled": false
@@ -432,7 +430,8 @@
             "enabled": false
         },
         "FixImagesQuality": {
-            "enabled": true
+            "enabled": true,
+            "originalImagesInChat": false
         },
         "FixSpotifyEmbeds": {
             "enabled": false
@@ -506,7 +505,8 @@
         "BetterSettings": {
             "enabled": true,
             "disableFade": true,
-            "eagerLoad": true
+            "eagerLoad": true,
+            "organizeMenu": true
         },
         "FriendsSince": {
             "enabled": false
@@ -521,7 +521,9 @@
             "enabled": false
         },
         "BetterSessions": {
-            "enabled": false
+            "enabled": false,
+            "backgroundCheck": false,
+            "checkInterval": 20
         },
         "ImplicitRelationships": {
             "enabled": true,
@@ -676,6 +678,35 @@
         },
         "ExpressionCloner": {
             "enabled": false
+        },
+        "CustomCommands": {
+            "enabled": false,
+            "tagsList": {}
+        },
+        "CharacterCounter": {
+            "enabled": true,
+            "colorEffects": true
+        },
+        "CopyStickerLinks": {
+            "enabled": false
+        },
+        "ImageFilename": {
+            "enabled": false
+        },
+        "MoreQuickReactions": {
+            "enabled": false
+        },
+        "NoMiddleClickPaste": {
+            "enabled": false
+        },
+        "ConcatenatedComponentExtractor": {
+            "enabled": true
+        },
+        "DisableDeepLinks": {
+            "enabled": true
+        },
+        "MusicRichPresence": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -688,8 +719,13 @@
         "authenticated": true,
         "url": "https://api.vencord.dev/",
         "settingsSync": true,
-        "settingsSyncVersion": 1748705076070
+        "settingsSyncVersion": 1784299944703
     },
     "enabledThemes": [],
-    "eagerPatches": false
+    "eagerPatches": false,
+    "uiElements": {
+        "chatBarButtons": {},
+        "messagePopoverButtons": {}
+    },
+    "windowsMaterial": "none"
 }
