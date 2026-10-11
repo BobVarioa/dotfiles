@@ -61,6 +61,8 @@ function hl_unlock()
 end
 
 hl.on("hyprland.start", function()
+	hl.exec_cmd("hyprpm reload")
+
     -- lock on start --
     hl_lock()
 
@@ -186,9 +188,6 @@ hl.config({
         -- locking
         session_lock_xray = true,
 
-        enable_swallow = true,
-        swallow_regex = "^(kitty)$",
-
         -- background tweaks
         disable_hyprland_logo = true,
         disable_splash_rendering = true,
@@ -197,7 +196,19 @@ hl.config({
 
     quirks = {
         prefer_hdr = 1
-    }
+    },
+    
+    plugin = {
+        hyprcapture = {
+            default_mode = "region",
+            confirm_before_capture = false,
+            fullscreen_scope = "current",
+            include_cursor = true,
+            save = true,
+            clipboard = true,
+            show_thumbnail = true,
+        },
+    },
 })
 
 hl.curve("my_bezier", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.05 } } })
@@ -270,8 +281,9 @@ end)
 hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd("nwg-displays"))
 
 -- screenshot --
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grimblast copysave area"))
-hl.bind("SUPER + Print", hl.dsp.exec_cmd("grimblast copysave active"))
+hl.bind("SUPER + SHIFT + S", function()
+	hl.plugin.hyprcapture.open()
+end)
 
 -- locking --
 hl.bind("SUPER + L", function()
