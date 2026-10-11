@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Skystream
+Exec=~/apps/skystream-linux/skystream
+Icon=skystream
+Terminal=false
+Type=Application
