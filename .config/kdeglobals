@@ -21,8 +21,8 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=143,98,171
-BackgroundNormal=49,54,59
+BackgroundAlternate=141,95,168
+BackgroundNormal=41,44,48
 DecorationFocus=184,117,220
 DecorationHover=184,117,220
 ForegroundActive=184,117,220
@@ -36,12 +36,12 @@ ForegroundVisited=155,89,182
 
 [Colors:Complementary]
 BackgroundAlternate=30,87,116
-BackgroundNormal=42,46,50
+BackgroundNormal=32,35,38
 DecorationFocus=184,117,220
 DecorationHover=184,117,220
 ForegroundActive=184,117,220
 ForegroundInactive=161,169,177
-ForegroundLink=223,201,238
+ForegroundLink=184,117,220
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -49,8 +49,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Header]
-BackgroundAlternate=42,46,50
-BackgroundNormal=49,54,59
+BackgroundAlternate=32,35,38
+BackgroundNormal=41,44,48
 DecorationFocus=184,117,220
 DecorationHover=184,117,220
 ForegroundActive=184,117,220
@@ -63,13 +63,13 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Header][Inactive]
-BackgroundAlternate=49,54,59
-BackgroundNormal=42,46,50
-DecorationFocus=61,174,233
-DecorationHover=61,174,233
-ForegroundActive=61,174,233
+BackgroundAlternate=41,44,48
+BackgroundNormal=32,35,38
+DecorationFocus=160,124,180
+DecorationHover=160,124,180
+ForegroundActive=160,124,180
 ForegroundInactive=161,169,177
-ForegroundLink=29,153,243
+ForegroundLink=155,18,197
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -77,13 +77,13 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Selection]
-BackgroundAlternate=136,90,163
-BackgroundNormal=136,90,163
+BackgroundAlternate=134,88,161
+BackgroundNormal=134,88,161
 DecorationFocus=184,117,220
 DecorationHover=184,117,220
 ForegroundActive=184,117,220
 ForegroundInactive=255,255,255
-ForegroundLink=150,68,187
+ForegroundLink=223,201,238
 ForegroundNegative=176,55,69
 ForegroundNeutral=198,92,0
 ForegroundNormal=255,255,255
@@ -91,8 +91,8 @@ ForegroundPositive=23,104,57
 ForegroundVisited=155,89,182
 
 [Colors:Tooltip]
-BackgroundAlternate=42,46,50
-BackgroundNormal=49,54,59
+BackgroundAlternate=32,35,38
+BackgroundNormal=41,44,48
 DecorationFocus=184,117,220
 DecorationHover=184,117,220
 ForegroundActive=184,117,220
@@ -105,8 +105,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:View]
-BackgroundAlternate=35,38,41
-BackgroundNormal=27,30,32
+BackgroundAlternate=29,31,34
+BackgroundNormal=20,22,24
 DecorationFocus=184,117,220
 DecorationHover=184,117,220
 ForegroundActive=184,117,220
@@ -119,13 +119,13 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Window]
-BackgroundAlternate=49,54,59
-BackgroundNormal=42,46,50
+BackgroundAlternate=41,44,48
+BackgroundNormal=32,35,38
 DecorationFocus=184,117,220
 DecorationHover=184,117,220
 ForegroundActive=184,117,220
 ForegroundInactive=161,169,177
-ForegroundLink=223,201,238
+ForegroundLink=184,117,220
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -134,7 +134,8 @@ ForegroundVisited=155,89,182
 
 [General]
 AccentColor=184,117,220
-ColorScheme=BreezeDark
+ColorScheme=BreezeDark-purple
+ColorSchemeHash=bee99dbf596462dab8fcd59bfe43b9dc68858de0
 LastUsedCustomAccentColor=184,117,220
 TerminalApplication=kitty
 
@@ -143,7 +144,10 @@ Theme=breeze
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
-widgetStyle=qt6ct-style
+ShowDeleteCommand=false
+contrast=4
+frameContrast=0.2
+widgetStyle=hyprqt6engine
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -160,12 +164,19 @@ Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=158
-View Style=Detail
+View Style=DetailTree
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
+
+[UiSettings]
+ColorScheme=default
 
 [WM]
-activeBackground=49,54,59
+activeBackground=39,44,49
 activeBlend=252,252,252
 activeForeground=252,252,252
-inactiveBackground=42,46,50
+inactiveBackground=32,36,40
 inactiveBlend=161,169,177
 inactiveForeground=161,169,177

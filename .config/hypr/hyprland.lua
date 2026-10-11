@@ -24,7 +24,8 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- env = SDL_VIDEODRIVER,wayland # causes issues
 
 -- qt tweaks --
-hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_QPA_PLATFORMTHEME", "kde")
+hl.env("QT_STYLE_OVERRIDE", "hyprqt6engine")
 hl.env("QT_QUICK_CONTROLS_STYLE", "org.kde.desktop")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
