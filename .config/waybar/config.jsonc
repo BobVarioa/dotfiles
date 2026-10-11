@@ -13,6 +13,7 @@
   "modules-center": ["clock#date", "clock#time"],
   "modules-right": [
     "tray",
+    "custom/rgb",
     "network",
     "bluetooth",
     "memory",
@@ -158,5 +159,13 @@
       "shutdown": "systemctl poweroff",
       "reboot": "systemctl reboot",
     },
+  },
+  
+  "custom/rgb": {
+    "format": "󰌌 ",
+    "tooltip": false,
+    "exec-on-event": true,
+    // "exec": " openrgb -l | grep '[0-9]: ' > /dev/null && echo '󰌌 ' || echo '󰌐 '",
+    "on-click": " openrgb -p on | grep 'Profile failed to load' > /dev/null && echo '󰌐 ' || echo '󰌌 '"
   },
 }

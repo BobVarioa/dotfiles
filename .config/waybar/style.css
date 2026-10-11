@@ -51,9 +51,10 @@
 #workspaces,
 #bluetooth,
 #custom-notifs,
-#custom-power {
-  padding-left: 10px;
-  padding-right: 10px;
+#custom-power,
+#custom-rgb {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #custom-notifs,
@@ -73,6 +74,7 @@
   margin-right: 20px;
   border-radius: 15px;
   padding-right: 8px;
+  padding-top: 2px;
 }
 
 #battery.warning.discharging {
@@ -167,4 +169,10 @@
 
 menu {
   border-radius: 5px;
+}
+
+#custom-rgb {
+  padding-top: 2px;
+  padding-right: 0px;
+  font-size: 18px;
 }
